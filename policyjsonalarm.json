@@ -1,1 +1,21 @@
-
+### specified alarm in the specified account to invoke the function.
+{
+  "Version": "2012-10-17",
+  "Id": "default",
+  "Statement": [
+    {
+      "Sid": "AlarmAction",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "lambda.alarms.cloudwatch.amazonaws.com"
+      },
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:us-east-1:444455556666:function:function-name",
+      "Condition": {
+        "StringEquals": {
+          "AWS:SourceAccount": "111122223333",
+          "AWS:SourceArn": "arn:aws:cloudwatch:us-east-1:111122223333:alarm:alarm-name"
+        }
+      }
+    }]
+}
