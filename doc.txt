@@ -1,0 +1,2 @@
+When you specify a Lambda function as an alarm action, you must create a resource policy for
+  the function to allow the CloudWatch service principal to  invoke the function
